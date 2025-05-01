@@ -5,11 +5,12 @@
 import sys
 sys.path.append("../perceptron")
 
-from perceptron import PerceptronBase, relu
+from perceptron import PerceptronBase, ReLU
 
 perceptron = PerceptronBase(
-  f_activation=relu,
-  input_units=1
+  f_activation=ReLU(),
+  input_units=1,
+  init_random_hiperparameters=True
 )
 
 xi = perceptron.predict(100)

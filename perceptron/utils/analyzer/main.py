@@ -1,10 +1,13 @@
 from termpyx import Console
 from matplotlib import pyplot as plt
 
+from ..generators.base import DatasetGenerator
+
 class Analyzer:
   def __init__(self, perceptron):
     self.perceptron = perceptron
     self.console = Console(in_debug=True)
+    self.middleware_results = dict()
 
   def mse(self):
     error_mse = []
@@ -54,6 +57,41 @@ class Analyzer:
     plt.ylabel('Error')
     plt.show()
 
+  def history_weights(self):
+    if self.middleware_results["weights"]:
+      plt.grid()
+      plt.plot(self.middleware_results["weights"])
+      plt.title("Weights history")
+      plt.xlabel('Epoch')
+      plt.ylabel('Error')
+      plt.show()
+    else:
+      self.console.info("No se han guardado los pesos durante el entrenamiento")
+
+  def history_bias(self):
+    if self.middleware_results["bias"]:
+      plt.grid()
+      plt.plot(self.middleware_results["bias"])
+      plt.title("Bias history")
+      plt.xlabel('Epoch')
+      plt.ylabel('Error')
+      plt.show()
+    else:
+      self.console.info("No se han guardado los bias durante el entrenamiento")
+
+  def compare_graph(self, generator:DatasetGenerator):
+    x_true = generator.x
+    y_true = generator.y
+
+    y_pred = [self.perceptron.predict(x) for x in generator.x]
+
+    plt.grid()
+    plt.plot(x_true, y_true, label="Linea de frontera")
+    plt.plot(x_true, y_pred, label="Perceptrón")
+    plt.title("Comparación de datos")
+    plt.legend()
+    plt.show()
+
   def debug(self):
     error_history = self.perceptron.error_history
     self.console.info(f"Longitud de épocas: {len(error_history)}")
@@ -63,7 +101,7 @@ class Analyzer:
 
     # Analizando el perceptrón:
     self.console.separator("Hiperparámetros del perceptrón")
-    self.console.info(f"Función de activación: {self.perceptron.f_activation.__name__}")
+    self.console.info(f"Función de activación: {self.perceptron.f_activation}")
     self.console.info(f"Umbral: {self.perceptron.bias}")
     self.console.info(f"Pesos: {self.perceptron.weights}")
 
