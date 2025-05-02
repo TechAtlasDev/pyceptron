@@ -10,13 +10,13 @@ El objetivo es predecir el valor de y para un valor de x dado.
 import sys
 sys.path.append("../perceptron")
 
-from perceptron import PerceptronBase, Linear
+from perceptron import Perceptron, Linear
 from perceptron.utils.generators import Equation1Generator
 
 generator = Equation1Generator()
 x_train, y_train = generator.generate(quantity=100, range_start=-20, range_end=20, shuffle=True)
 
-perceptron = PerceptronBase(
+perceptron = Perceptron(
   f_activation=Linear(),
   input_units=1,
   init_random_hiperparameters=True,

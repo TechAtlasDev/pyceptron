@@ -8,7 +8,7 @@ import sys
 sys.path.append("../perceptron")
 
 # Importando las librerías
-from perceptron import PerceptronBase, Linear
+from perceptron import Perceptron, Linear, PerceptronGradient
 from perceptron.utils.generators import Celsius2FahrenheitGenerator
 from perceptron.utils.analyzer import Analyzer
 from perceptron import MiddlewareTrainingMonolayer
@@ -18,7 +18,7 @@ generator = Celsius2FahrenheitGenerator()
 x_train, y_train = generator.generate(quantity=50, range_start=-20, range_end=20, shuffle=True)
 
 # Creando el perceptrón
-perceptron = PerceptronBase(
+perceptron = PerceptronGradient(
   f_activation=Linear(),
   input_units=1,
   init_random_hiperparameters=True,
@@ -37,7 +37,7 @@ datos = [
 perceptron.in_training(analyzer=analyzer, options=datos)
 
 # Entrenando al perceptrón
-epocas = 25
+epocas = 20
 perceptron.train(
   x=x_train,
   y=y_train,

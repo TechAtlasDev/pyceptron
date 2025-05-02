@@ -1,10 +1,10 @@
-from ..abs.perceptron import Perceptron
+from ..abs.perceptron import PerceptronABC
 from ...utils.analyzer import Analyzer
 from ..enums.middleware_training_monolayer import MiddlewareTrainingMonolayer
 
 import numpy as np
 
-class PerceptronBase(Perceptron):
+class Perceptron(PerceptronABC):
   def __init__(self, f_activation, input_units, init_random_hiperparameters:bool=False, verbose=False):
     self.verbose = verbose
     self.f_activation = f_activation
@@ -88,4 +88,4 @@ class PerceptronBase(Perceptron):
       self._analyzer_middleware.middleware_results[option.value["target"]].append(q_data)
   
   def __repr__(self):
-    return f"PerceptronBase(f_activation={self.f_activation}, input_units={self.units}, weights={self.weights}, bias={self.bias})"
+    return f"Perceptron(f_activation={self.f_activation}, input_units={self.units}, weights={self.weights}, bias={self.bias})"

@@ -1,5 +1,5 @@
 from ..factivations.relu import ReLU, ActFunctionBase
-from .perceptron import PerceptronBase
+from .perceptron import PerceptronABC
 
 class Layer:
   def __init__(self, units:int, activation:ActFunctionBase=ReLU(), input_units:int=0):
@@ -7,11 +7,11 @@ class Layer:
     self.activation = activation
     self.sinaptic_conections:int = input_units
 
-    self.perceptrones:list[PerceptronBase] = self._generate_perceptrons()
+    self.perceptrones:list[PerceptronABC] = self._generate_perceptrons()
 
   def _generate_perceptrons(self):
     return [
-      PerceptronBase(f_activation=self.activation, input_units=1, init_random_hiperparameters=True) for _ in range(self.units)
+      PerceptronABC(f_activation=self.activation, input_units=1, init_random_hiperparameters=True) for _ in range(self.units)
     ]
 
   def __repr__(self):

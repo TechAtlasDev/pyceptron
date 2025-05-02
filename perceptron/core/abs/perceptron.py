@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Perceptron(ABC):
+class PerceptronABC(ABC):
   def __init__(self, f_activation:callable, input_units:int):
     pass
 
