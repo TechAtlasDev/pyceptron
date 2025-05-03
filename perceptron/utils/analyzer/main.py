@@ -1,13 +1,20 @@
 from termpyx import Console
+from termpyx.src.enums.color import Color
+
 from matplotlib import pyplot as plt
 
+from .abc_main import AnalyzerABC
 from ..generators.base import DatasetGenerator
 
-class Analyzer:
+class Analyzer(AnalyzerABC):
   def __init__(self, perceptron):
     self.perceptron = perceptron
     self.console = Console(in_debug=True)
     self.middleware_results = dict()
+    self.banner()
+
+  def banner(self):
+    self.console.separator(self.perceptron.name, separator="=", length=15, color=Color.GREEN)
 
   def mse(self):
     error_mse = []

@@ -5,9 +5,9 @@
 import sys
 sys.path.append("../perceptron")
 
-from perceptron import Perceptron, ReLU
+from perceptron import PerceptronClassic, ReLU
 
-perceptron = Perceptron(
+perceptron = PerceptronClassic(
   f_activation=ReLU(),
   input_units=1,
   init_random_hiperparameters=True

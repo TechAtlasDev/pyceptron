@@ -1,3 +1,3 @@
-from .factivations import Linear, ReLU, ActFunctionBase
-from .objects.perceptron import Perceptron
-from .objects.perceptrongradient import PerceptronGradient
+from .factivations import *
+from .objects.perceptrons.classic import PerceptronClassic
+from .objects.perceptrons.gradient import PerceptronGradient

@@ -1,16 +1,16 @@
 import sys
 sys.path.append("../perceptron")
 
-from perceptron import ReLU, Layer, Sequential, Linear
+from perceptron import ReLU, Layer, Sequential, Sigmoid
 from termpyx import Console
 import numpy as np
 
 console = Console()
 
 modelo = Sequential()
-capa1 = Layer(units=1, activation=ReLU(), input_units=1)
-capa2 = Layer(units=2, activation=ReLU())
-capa3 = Layer(units=1, activation=ReLU())
+capa1 = Layer(units=1, activation=Sigmoid(), input_units=1)
+capa2 = Layer(units=2, activation=Sigmoid())
+capa3 = Layer(units=1, activation=Sigmoid())
 
 layers = [capa1, capa2, capa3]
 modelo.add_layers(layers)
@@ -37,3 +37,5 @@ y = [modelo.predict(z) for z in x]
 
 plt.plot(x, y)
 plt.show()
+
+print (x, y)
