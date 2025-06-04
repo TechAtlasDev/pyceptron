@@ -1,6 +1,16 @@
 # 🧠 Pyceptron
 
-<iframe src="https://app.warp.dev/block/embed/UE8Y0j28TomxzFn59Jfjk5" title="embedded warp block" style="width: 922px; height: 435px; border:0; overflow:hidden;" allow="clipboard-read; clipboard-write"></iframe>
+![PyPI Version](https://img.shields.io/pypi/v/pyceptron.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![Development Status](https://img.shields.io/badge/status-pre--alpha-red)
+![GitHub Stars](https://img.shields.io/github/stars/TechAtlasDev/pyceptron.svg?style=social)
+![NumPy](https://img.shields.io/badge/numpy-1.21.0%2B-blue?logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/matplotlib-3.4.0%2B-blue?logo=matplotlib&logoColor=white)
+![Poetry](https://img.shields.io/badge/poetry-1.2.0%2B-blue?logo=poetry&logoColor=white)
+![TermPyX](https://img.shields.io/badge/TermPyX-v1.0-orange)
+
+![Perceptron vs Dataset](image-6.png)
 
 **Pyceptron** es una librería open-source desarrollada con el objetivo de desarrollar, analizar y demostrar muchos conceptos que un perceptrón nos ofrece, a base de una arquitectura minimalista y muy fácil de desarrollar.
 
@@ -45,6 +55,8 @@ y_pred = perceptron.predict(x_test)
 
 print (f"Predicción de {x_test} -> Predicho: {y_pred}")
 ```
+
+![Home](image-7.png)
 
 ## ⚒️ Funciones extra
 
@@ -101,6 +113,9 @@ celsius_generator.graph_x() # Grafica la distribución de X
 celsius_generator.graph_y() # Grafica la distribución de Y
 ```
 
+![Dataset Analysis X](image-4.png)
+![Dataset Analysis Y](image-5.png)
+
 Estos generadores son cruciales para probar cómo tus perceptrones se adaptan a diferentes tipos de problemas *(lineales vs. no lineales)* y para investigar el impacto del orden de los datos.
 
 ### Analizador de Rendimiento `(pyceptron.utils.analyzer)`
@@ -108,7 +123,13 @@ El `Analyzer` es tu laboratorio de depuración y visualización. Te permite una 
 
 - **Monitoreo del Error:** Visualiza el historial del error promedio y el Error Cuadrático Medio (MSE) a lo largo de las épocas, dándote una idea clara de la convergencia (o divergencia) del modelo.
 
+![Error History](image.png)
+![MSE](image-1.png)
+
 - **Historial de Hiperparámetros:** Observa cómo evolucionan los pesos y el bias del perceptrón durante el entrenamiento. Esto es invaluable para entender el proceso de optimización.
+
+![Weights History](image-2.png)
+![Bias History](image-3.png)
 
 - **Comparación de Datos:** Gráfica las predicciones del perceptrón frente a la "línea de frontera" real de tus datos, permitiendo un diagnóstico visual inmediato del rendimiento del modelo.
 
@@ -188,6 +209,9 @@ Esta estructura promueve la **separación de responsabilidades**, haciendo que c
 3. Realiza tus cambios y haz un commit (`git commit -am 'Añadir nueva-feature'`).
 4. Haz un push a la rama (`git push origin feature/nueva-feature`).
 5. Abre un Pull Request.
+
+## 💡 Anatomía del perceptrón monocapa
+Pronto un artículo científico será publicado que buscará sustentar la arquitectura del proyecto y evidenciará diferentes tipos de análisis en el comportamiento del perceptrón monocapa.
 
 ## 📝 Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
