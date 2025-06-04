@@ -8,10 +8,10 @@ import sys
 sys.path.append("../perceptron")
 
 # Importando las librerías
-from perceptron import PerceptronClassic, Linear
-from perceptron.utils.generators import Celsius2FahrenheitGenerator
-from perceptron.utils.analyzer import Analyzer
-from perceptron import MiddlewareTrainingMonolayer
+from pyceptron import PerceptronClassic, Linear
+from pyceptron.utils.generators import Celsius2FahrenheitGenerator
+from pyceptron.utils.analyzer import Analyzer
+from pyceptron import MiddlewareTrainingMonolayer
 
 # Creando el set de datos
 generator = Celsius2FahrenheitGenerator()
@@ -65,3 +65,8 @@ generator.graph_x()
 generator.graph_y()
 
 analyzer.compare_graph(generator)
+
+perceptron.save(
+  dir="perceptrones",
+  overwrite=True
+)

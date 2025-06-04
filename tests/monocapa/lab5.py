@@ -16,10 +16,10 @@ import sys
 sys.path.append("../perceptron")
 
 # Importando las librerías
-from perceptron import PerceptronClassic, Linear
-from perceptron.utils.generators import Celsius2FahrenheitGenerator
-from perceptron.utils.analyzer import Analyzer
-from perceptron import MiddlewareTrainingMonolayer
+from pyceptron import PerceptronClassic, Linear
+from pyceptron.utils.generators import Celsius2FahrenheitGenerator
+from pyceptron.utils.analyzer import Analyzer
+from pyceptron import MiddlewareTrainingMonolayer
 
 iteraciones = 10
 

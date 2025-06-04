@@ -8,9 +8,9 @@ sys.path.append("../perceptron")
 from termpyx import Console
 from termpyx.src.enums.color import Color
 
-from perceptron import PerceptronBase
-from perceptron.utils.generators import Parabola1Generator
-from perceptron import ReLU
+from pyceptron import PerceptronBase
+from pyceptron.utils.generators import Parabola1Generator
+from pyceptron import ReLU
 
 console = Console()
 generator = Parabola1Generator()

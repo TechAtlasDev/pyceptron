@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "perceptron"
+name = "pyceptron"
 version = "0.1.0"
 description = ""
 authors = ["techatlasdev <srgoqui@gmail.com>"]

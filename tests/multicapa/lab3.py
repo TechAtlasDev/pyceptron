@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../perceptron")
 
-from perceptron import ReLU, Layer, Sequential, Sigmoid
+from pyceptron import ReLU, Layer, Sequential, Sigmoid
 from termpyx import Console
 import numpy as np
 
