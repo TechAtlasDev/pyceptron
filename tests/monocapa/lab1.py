@@ -67,6 +67,6 @@ generator.graph_y()
 analyzer.compare_graph(generator)
 
 perceptron.save(
-  dir="perceptrones",
+  dir="perceptrons",
   overwrite=True
 )
